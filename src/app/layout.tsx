@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Onest } from "next/font/google";
+import { Onest, Archivo_Black, DM_Mono } from "next/font/google";
 
 import {
   generateMetadata,
@@ -20,6 +20,20 @@ const onest = Onest({
   display: "swap",
 });
 
+const archivoBlack = Archivo_Black({
+  variable: "--font-archivo",
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const dmMono = DM_Mono({
+  variable: "--font-dm-mono",
+  weight: ["300", "400", "500"],
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export const metadata: Metadata = generateMetadata();
 export const viewport: Viewport = generateViewport();
 
@@ -30,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${onest.variable}`}>
+      <body className={`${onest.variable} ${archivoBlack.variable} ${dmMono.variable}`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
