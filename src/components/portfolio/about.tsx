@@ -63,7 +63,7 @@ export const About = () => {
         <span>PIXEL-PERFECT</span>
         <span>SECURE ∞</span>
         <span>/CODE-QUALITY</span>
-        <span>//HASSLE-FREE</span>
+        <span>{"//HASSLE-FREE"}</span>
       </Inview>
 
       {/* Stats grid */}

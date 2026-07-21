@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import TextEngine from "spring-text-engine";
 import { Inview } from "@/components/animation/springs/in-view";
 
@@ -78,13 +79,14 @@ export const Hero = () => {
         config={{ duration: 1000 }}
         delayIn={300}
       >
-        <img
+        <Image
           src="/hero.png"
           alt="Portrait of Shahd Khairy Abdallah"
           className="w-full h-full object-contain"
           style={{ objectPosition: "center 61%", transform: "scale(2.20)" }}
           width={623}
           height={414}
+          priority
         />
       </Inview>
 

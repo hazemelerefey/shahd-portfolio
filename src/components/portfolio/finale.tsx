@@ -82,7 +82,7 @@ export const Finale = () => {
               Still scrolling? You found the source.
             </h2>
             <p className="text-[13px]">
-              Download Shahd's CV or start a conversation.
+              Download Shahd&apos;s CV or start a conversation.
             </p>
             <div className="grid grid-cols-2 gap-[14px] my-[24px]">
               <label className="grid gap-[5px] text-[12px]">
