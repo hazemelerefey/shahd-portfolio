@@ -1,75 +1,44 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { useSpring, animated } from "@react-spring/web";
+import { useEffect, useState } from "react";
 
 export const Hero = () => {
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const [titleSpring, titleApi] = useSpring(() => ({
-    from: { opacity: 0, y: 40 },
-    to: { opacity: 1, y: 0 },
-    config: { tension: 120, friction: 14 },
-    delay: 300,
-  }));
+  const [loaded, setLoaded] = useState(false);
 
-  const [kickerSpring, kickerApi] = useSpring(() => ({
-    from: { opacity: 0, y: 20 },
-    to: { opacity: 1, y: 0 },
-    config: { tension: 120, friction: 14 },
-    delay: 100,
-  }));
-
-  const [portraitSpring, portraitApi] = useSpring(() => ({
-    from: { opacity: 0, scale: 0.95 },
-    to: { opacity: 1, scale: 1 },
-    config: { tension: 80, friction: 14 },
-    delay: 500,
-  }));
-
-  const [roleSpring, roleApi] = useSpring(() => ({
-    from: { opacity: 0, y: 20 },
-    to: { opacity: 1, y: 0 },
-    config: { tension: 120, friction: 14 },
-    delay: 700,
-  }));
-
-  const [metaSpring, metaApi] = useSpring(() => ({
-    from: { opacity: 0 },
-    to: { opacity: 1 },
-    config: { tension: 120, friction: 14 },
-    delay: 900,
-  }));
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
 
   return (
     <section className="hero">
       <div className="hero-aura" aria-hidden="true" />
 
-      <animated.p className="hero-kicker" style={kickerSpring}>
+      <p className={`hero-kicker ${loaded ? "hero-visible" : "hero-hidden"}`}>
         YOU IMAGINE — I BUILD
-      </animated.p>
+      </p>
 
-      <h1 className="hero-title" aria-label="Full Stack Developer" ref={titleRef}>
-        <animated.span style={titleSpring}>FULL STACK</animated.span>
-        <animated.span style={{ ...titleSpring, delay: 400 }}>DEVELOPER</animated.span>
+      <h1 className="hero-title" aria-label="Full Stack Developer">
+        <span className={loaded ? "hero-visible" : "hero-hidden"}>FULL STACK</span>
+        <span className={loaded ? "hero-visible hero-delay-1" : "hero-hidden"}>DEVELOPER</span>
       </h1>
 
-      <animated.div className="portrait-wrap" style={portraitSpring}>
+      <div className="portrait-wrap">
         <img src="/hero.png" alt="Portrait of Shahd Khairy Abdallah" />
-      </animated.div>
+      </div>
 
-      <animated.p className="hero-role" style={roleSpring}>
+      <p className={`hero-role ${loaded ? "hero-visible hero-delay-2" : "hero-hidden"}`}>
         MERN applications &amp; interactive experiences
-      </animated.p>
+      </p>
 
-      <animated.div className="hero-meta left" style={metaSpring}>
+      <div className={`hero-meta left ${loaded ? "hero-visible hero-delay-3" : "hero-hidden"}`}>
         <span>CAIRO — EGYPT</span>
         <span>ARABIC · ENGLISH B2</span>
-      </animated.div>
+      </div>
 
-      <animated.div className="hero-meta right" style={metaSpring}>
+      <div className={`hero-meta right ${loaded ? "hero-visible hero-delay-3" : "hero-hidden"}`}>
         <span>REACT · NODE · EXPRESS</span>
         <span>MONGODB · REST APIS</span>
-      </animated.div>
+      </div>
 
       <a className="scroll-cue" href="#about">
         SCROLL TO EXPLORE <b>↓</b>
