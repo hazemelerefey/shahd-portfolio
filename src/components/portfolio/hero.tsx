@@ -37,7 +37,7 @@ export const Hero = () => {
         from={{ opacity: 0, y: 20 }}
         to={{ opacity: 1, y: 0 }}
         mode="once"
-        config={{ duration: 800 }}
+        config={{ tension: 120, friction: 14 }}
       >
         YOU IMAGINE — I BUILD
       </Inview>
@@ -57,7 +57,7 @@ export const Hero = () => {
         letterIn={{ opacity: 1, y: 0 }}
         letterOut={{ opacity: 0, y: 40 }}
         letterStagger={30}
-        letterConfig={{ duration: 600 }}
+        letterConfig={{ tension: 120, friction: 14 }}
         mode="once"
         overflow
       >
@@ -76,7 +76,7 @@ export const Hero = () => {
         from={{ opacity: 0, scale: 0.9 }}
         to={{ opacity: 1, scale: 1 }}
         mode="once"
-        config={{ duration: 1000 }}
+        config={{ tension: 120, friction: 14 }}
         delayIn={300}
       >
         <Image
@@ -111,7 +111,7 @@ export const Hero = () => {
         from={{ opacity: 0, y: 20 }}
         to={{ opacity: 1, y: 0 }}
         mode="once"
-        config={{ duration: 800 }}
+        config={{ tension: 120, friction: 14 }}
         delayIn={500}
       >
         MERN applications &amp; interactive experiences
@@ -123,7 +123,7 @@ export const Hero = () => {
         from={{ opacity: 0 }}
         to={{ opacity: 1 }}
         mode="once"
-        config={{ duration: 800 }}
+        config={{ tension: 120, friction: 14 }}
         delayIn={700}
       >
         <span>CAIRO — EGYPT</span>
@@ -136,7 +136,7 @@ export const Hero = () => {
         from={{ opacity: 0 }}
         to={{ opacity: 1 }}
         mode="once"
-        config={{ duration: 800 }}
+        config={{ tension: 120, friction: 14 }}
         delayIn={700}
       >
         <span>REACT · NODE · EXPRESS</span>
@@ -151,7 +151,7 @@ export const Hero = () => {
         from={{ opacity: 0 }}
         to={{ opacity: 1 }}
         mode="once"
-        config={{ duration: 800 }}
+        config={{ tension: 120, friction: 14 }}
         delayIn={900}
       >
         SCROLL TO EXPLORE <b>↓</b>

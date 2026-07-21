@@ -37,7 +37,7 @@ export const Mission = () => {
         lineIn={{ y: "0%", opacity: 1 }}
         lineOut={{ y: "100%", opacity: 0 }}
         lineStagger={100}
-        lineConfig={{ duration: 900 }}
+        lineConfig={{ tension: 100, friction: 12 }}
         mode="once"
         overflow
       >
@@ -49,18 +49,17 @@ export const Mission = () => {
         className="absolute bottom-0 left-0 right-0 border-t border-b border-solid border-[#333] overflow-hidden py-[17px] font-mono text-[11px] whitespace-nowrap"
         aria-label="Skills"
       >
-        <Inview
-          className="inline-block"
-          from={{ x: "0%" }}
-          to={{ x: "-100%" }}
-          mode="always"
-          config={{ duration: 24000, easing: "linear" }}
+        <div
+          className="inline-block animate-marquee"
+          style={{
+            paddingLeft: "100%",
+          }}
         >
-          <span style={{ paddingLeft: "100%" }}>
-            JAVASCRIPT · REACT · NODE.JS · EXPRESS · MONGODB · TYPESCRIPT ·
-            THREE.JS · AWS · DOCKER · KUBERNETES ·{" "}
-          </span>
-        </Inview>
+          JAVASCRIPT · REACT · NODE.JS · EXPRESS · MONGODB · TYPESCRIPT ·
+          THREE.JS · AWS · DOCKER · KUBERNETES ·{" "}
+          JAVASCRIPT · REACT · NODE.JS · EXPRESS · MONGODB · TYPESCRIPT ·
+          THREE.JS · AWS · DOCKER · KUBERNETES ·
+        </div>
       </div>
     </section>
   );

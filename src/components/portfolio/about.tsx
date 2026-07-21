@@ -58,7 +58,7 @@ export const About = () => {
         from={{ opacity: 0 }}
         to={{ opacity: 1 }}
         mode="once"
-        config={{ duration: 800 }}
+        config={{ tension: 120, friction: 14 }}
       >
         <span>PIXEL-PERFECT</span>
         <span>SECURE ∞</span>
@@ -84,7 +84,7 @@ export const About = () => {
             from={{ opacity: 0, y: 40 }}
             to={{ opacity: 1, y: 0 }}
             mode="once"
-            config={{ duration: 800 }}
+            config={{ tension: 120, friction: 14 }}
             delayIn={i * 150}
           >
             <small className="font-mono text-[10px] font-medium tracking-[0.1em] mb-auto">

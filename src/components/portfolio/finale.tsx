@@ -36,7 +36,7 @@ export const Finale = () => {
         from={{ opacity: 0 }}
         to={{ opacity: 0.95 }}
         mode="once"
-        config={{ duration: 1000 }}
+        config={{ tension: 80, friction: 14 }}
       >
         {terminalLines.map((line, i) => (
           <p key={i} className="m-0">
@@ -60,7 +60,7 @@ export const Finale = () => {
           from={{ opacity: 0, scale: 0.8 }}
           to={{ opacity: 1, scale: 1 }}
           mode="once"
-          config={{ duration: 600, tension: 200, friction: 20 }}
+          config={{ tension: 200, friction: 20 }}
           delayIn={500}
         >
           {/* Title bar */}

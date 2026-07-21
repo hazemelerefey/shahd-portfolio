@@ -34,7 +34,7 @@ export const Contact = () => {
         from={{ opacity: 0, y: 30 }}
         to={{ opacity: 1, y: 0 }}
         mode="once"
-        config={{ duration: 800 }}
+        config={{ tension: 120, friction: 14 }}
       >
         <p className="m-0 mb-[55px]">
           Hey, Shahd! My name is{" "}
@@ -142,7 +142,7 @@ export const Contact = () => {
         from={{ opacity: 0 }}
         to={{ opacity: 1 }}
         mode="once"
-        config={{ duration: 800 }}
+        config={{ tension: 120, friction: 14 }}
         delayIn={300}
       >
         <a

@@ -121,7 +121,7 @@ export const Approach = () => {
         from={{ opacity: 0, y: 20 }}
         to={{ opacity: 1, y: 0 }}
         mode="once"
-        config={{ duration: 800 }}
+        config={{ tension: 120, friction: 14 }}
       >
         HOW I / WORK
       </Inview>
@@ -138,7 +138,7 @@ export const Approach = () => {
           from={{ opacity: 0, x: -40 }}
           to={{ opacity: 1, x: 0 }}
           mode="once"
-          config={{ duration: 800 }}
+          config={{ tension: 120, friction: 14 }}
         >
           <b className="font-mono text-[10px] writing-mode-vertical absolute">
             SHAHD
@@ -171,7 +171,7 @@ export const Approach = () => {
           from={{ opacity: 0, x: 40 }}
           to={{ opacity: 1, x: 0 }}
           mode="once"
-          config={{ duration: 800 }}
+          config={{ tension: 120, friction: 14 }}
           delayIn={200}
         >
           <b className="font-mono text-[10px] writing-mode-vertical absolute">
@@ -199,7 +199,7 @@ export const Approach = () => {
         from={{ opacity: 0, y: 20 }}
         to={{ opacity: 1, y: 0 }}
         mode="once"
-        config={{ duration: 800 }}
+        config={{ tension: 120, friction: 14 }}
         delayIn={400}
       >
         {skillCloud.map((skill) => (

@@ -13,7 +13,7 @@ export const Calculator = () => {
 
   const totalSpring = useSpring({
     number: total,
-    config: { duration: 300 },
+    config: { tension: 200, friction: 20 },
   });
 
   return (
@@ -28,7 +28,7 @@ export const Calculator = () => {
         from={{ opacity: 0, y: 20 }}
         to={{ opacity: 1, y: 0 }}
         mode="once"
-        config={{ duration: 800 }}
+        config={{ tension: 120, friction: 14 }}
       >
         BUILD / VALUE
       </Inview>
@@ -44,7 +44,7 @@ export const Calculator = () => {
         lineIn={{ y: "0%", opacity: 1 }}
         lineOut={{ y: "100%", opacity: 0 }}
         lineStagger={100}
-        lineConfig={{ duration: 900 }}
+        lineConfig={{ tension: 100, friction: 12 }}
         mode="once"
         overflow
       >
@@ -58,7 +58,7 @@ export const Calculator = () => {
         from={{ opacity: 0 }}
         to={{ opacity: 1 }}
         mode="once"
-        config={{ duration: 800 }}
+        config={{ tension: 120, friction: 14 }}
         delayIn={200}
       >
         An illustrative planning tool—not a quote. Adjust scope and complexity
@@ -71,7 +71,7 @@ export const Calculator = () => {
         from={{ opacity: 0, y: 30 }}
         to={{ opacity: 1, y: 0 }}
         mode="once"
-        config={{ duration: 800 }}
+        config={{ tension: 120, friction: 14 }}
         delayIn={300}
       >
         {/* Features control */}
@@ -162,7 +162,7 @@ export const Calculator = () => {
         from={{ opacity: 0, y: 20 }}
         to={{ opacity: 1, y: 0 }}
         mode="once"
-        config={{ duration: 800 }}
+        config={{ tension: 120, friction: 14 }}
         delayIn={500}
       >
         DISCUSS THE REAL SCOPE <span>↗</span>

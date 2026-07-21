@@ -166,7 +166,6 @@ const ProjectArt = ({ type }: { type: string }) => {
             style={{
               width: `${w}%`,
               aspectRatio: "1",
-              animation: `spin ${i === 1 ? "reverse " : ""}12s linear infinite`,
               ...(i === 2
                 ? {
                     background:
@@ -202,7 +201,7 @@ export const Projects = () => {
           letterIn={{ opacity: 1, y: 0 }}
           letterOut={{ opacity: 0, y: 40 }}
           letterStagger={20}
-          letterConfig={{ duration: 600 }}
+          letterConfig={{ tension: 140, friction: 16 }}
           mode="once"
           overflow
         >
@@ -220,7 +219,7 @@ export const Projects = () => {
           from={{ opacity: 0 }}
           to={{ opacity: 1 }}
           mode="once"
-          config={{ duration: 800 }}
+          config={{ tension: 120, friction: 14 }}
         >
           {/* Giant background text */}
           <div
@@ -244,7 +243,7 @@ export const Projects = () => {
             from={{ opacity: 0, x: 60 }}
             to={{ opacity: 1, x: 0 }}
             mode="once"
-            config={{ duration: 800 }}
+            config={{ tension: 120, friction: 14 }}
             delayIn={200}
           >
             {/* Window bar */}
@@ -300,15 +299,6 @@ export const Projects = () => {
           </Inview>
         </Inview>
       ))}
-
-      {/* Keyframes for orbit animation */}
-      <style jsx global>{`
-        @keyframes spin {
-          to {
-            transform: rotate(360deg);
-          }
-        }
-      `}</style>
     </section>
   );
 };
