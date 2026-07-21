@@ -10,39 +10,26 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section className="hero">
+    <section className="hero" id="hero">
       <div className="hero-aura" aria-hidden="true" />
-
-      <p className={`hero-kicker ${loaded ? "hero-visible" : "hero-hidden"}`}>
-        YOU IMAGINE — I BUILD
-      </p>
-
+      <p className={`hero-kicker ${loaded ? "reveal" : ""}`}>YOU IMAGINE — I BUILD</p>
       <h1 className="hero-title" aria-label="Full Stack Developer">
-        <span className={loaded ? "hero-visible" : "hero-hidden"}>FULL STACK</span>
-        <span className={loaded ? "hero-visible hero-delay-1" : "hero-hidden"}>DEVELOPER</span>
+        <span>FULL STACK</span>
+        <span>DEVELOPER</span>
       </h1>
-
-      <div className="portrait-wrap">
+      <div className={`portrait-wrap ${loaded ? "reveal" : ""}`}>
         <img src="/hero.png" alt="Portrait of Shahd Khairy Abdallah" />
       </div>
-
-      <p className={`hero-role ${loaded ? "hero-visible hero-delay-2" : "hero-hidden"}`}>
-        MERN applications &amp; interactive experiences
-      </p>
-
-      <div className={`hero-meta left ${loaded ? "hero-visible hero-delay-3" : "hero-hidden"}`}>
+      <p className={`hero-role ${loaded ? "reveal" : ""}`}>MERN applications &amp; interactive experiences</p>
+      <div className={`hero-meta left ${loaded ? "reveal" : ""}`}>
         <span>CAIRO — EGYPT</span>
         <span>ARABIC · ENGLISH B2</span>
       </div>
-
-      <div className={`hero-meta right ${loaded ? "hero-visible hero-delay-3" : "hero-hidden"}`}>
+      <div className={`hero-meta right ${loaded ? "reveal" : ""}`}>
         <span>REACT · NODE · EXPRESS</span>
         <span>MONGODB · REST APIS</span>
       </div>
-
-      <a className="scroll-cue" href="#about">
-        SCROLL TO EXPLORE <b>↓</b>
-      </a>
+      <a className="scroll-cue" href="#about">SCROLL TO EXPLORE <b>↓</b></a>
     </section>
   );
 };
