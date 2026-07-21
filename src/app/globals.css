@@ -155,6 +155,23 @@ body {
 
 @layer components {
   /* Hero section */
+  .hero {
+    height: 100svh;
+    min-height: 720px;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    background: radial-gradient(
+      circle at 50% 42%,
+      #d0c5ea 0,
+      #aebde4 35%,
+      #829bd2 75%,
+      #758ec9 100%
+    );
+    color: #3c3854;
+  }
+
   .hero-aura {
     position: absolute;
     width: 68vw;
@@ -171,7 +188,7 @@ body {
     top: 22%;
     margin: 0;
     text-align: center;
-    font: clamp(64px, 12.7vw, 300px) / 0.80 var(--font-archivo);
+    font: clamp(64px, 12.7vw, 300px) / 0.80 var(--font-display), Impact, sans-serif;
     letter-spacing: -0.075em;
     color: #45415d;
     text-transform: uppercase;
@@ -222,7 +239,7 @@ body {
     position: absolute;
     z-index: 7;
     top: 15%;
-    font: 500 11px var(--font-dm-mono);
+    font: 500 11px var(--font-dm-mono), monospace;
     letter-spacing: 0.12em;
   }
 
@@ -230,7 +247,7 @@ body {
     position: absolute;
     z-index: 7;
     bottom: 6%;
-    font: clamp(17px, 2vw, 30px) var(--font-dm-mono);
+    font: clamp(17px, 2vw, 30px) var(--font-dm-mono), monospace;
     color: #fff;
     text-shadow: 0 1px 12px #31314d;
   }
@@ -239,7 +256,7 @@ body {
     position: absolute;
     z-index: 7;
     bottom: 6%;
-    font: 500 10px / 1.55 var(--font-dm-mono);
+    font: 500 10px / 1.55 var(--font-dm-mono), monospace;
     letter-spacing: 0.07em;
     display: grid;
     color: #f6f6f8;
@@ -260,7 +277,7 @@ body {
     bottom: 28px;
     left: 50%;
     transform: translateX(-50%);
-    font: 9px var(--font-dm-mono);
+    font: 9px var(--font-dm-mono), monospace;
     text-decoration: none;
     color: #fff;
     display: flex;

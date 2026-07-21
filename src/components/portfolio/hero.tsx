@@ -1,88 +1,76 @@
 "use client";
 
-import Image from "next/image";
-import TextEngine from "spring-text-engine";
-import { Inview } from "@/components/animation/springs/in-view";
+import { useEffect, useRef } from "react";
+import { useSpring, animated } from "@react-spring/web";
 
 export const Hero = () => {
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const [titleSpring, titleApi] = useSpring(() => ({
+    from: { opacity: 0, y: 40 },
+    to: { opacity: 1, y: 0 },
+    config: { tension: 120, friction: 14 },
+    delay: 300,
+  }));
+
+  const [kickerSpring, kickerApi] = useSpring(() => ({
+    from: { opacity: 0, y: 20 },
+    to: { opacity: 1, y: 0 },
+    config: { tension: 120, friction: 14 },
+    delay: 100,
+  }));
+
+  const [portraitSpring, portraitApi] = useSpring(() => ({
+    from: { opacity: 0, scale: 0.95 },
+    to: { opacity: 1, scale: 1 },
+    config: { tension: 80, friction: 14 },
+    delay: 500,
+  }));
+
+  const [roleSpring, roleApi] = useSpring(() => ({
+    from: { opacity: 0, y: 20 },
+    to: { opacity: 1, y: 0 },
+    config: { tension: 120, friction: 14 },
+    delay: 700,
+  }));
+
+  const [metaSpring, metaApi] = useSpring(() => ({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { tension: 120, friction: 14 },
+    delay: 900,
+  }));
+
   return (
-    <section
-      className="hero relative overflow-hidden grid place-items-center"
-      style={{
-        height: "100svh",
-        minHeight: "720px",
-        background:
-          "radial-gradient(circle at 50% 42%, #d0c5ea 0, #aebde4 35%, #829bd2 75%, #758ec9 100%)",
-        color: "#3c3854",
-      }}
-    >
-      {/* Glow aura behind title */}
+    <section className="hero">
       <div className="hero-aura" aria-hidden="true" />
 
-      {/* Kicker */}
-      <p className="hero-kicker">YOU IMAGINE — I BUILD</p>
+      <animated.p className="hero-kicker" style={kickerSpring}>
+        YOU IMAGINE — I BUILD
+      </animated.p>
 
-      {/* Main title - two spans like original */}
-      <h1
-        className="hero-title"
-        aria-label="Full Stack Developer"
-      >
-        <TextEngine
-          tag="span"
-          className="block"
-          letterIn={{ opacity: 1, y: 0 }}
-          letterOut={{ opacity: 0, y: 40 }}
-          letterStagger={30}
-          letterConfig={{ tension: 120, friction: 14 }}
-          mode="once"
-          overflow
-        >
-          FULL STACK
-        </TextEngine>
-        <TextEngine
-          tag="span"
-          className="block"
-          letterIn={{ opacity: 1, y: 0 }}
-          letterOut={{ opacity: 0, y: 40 }}
-          letterStagger={30}
-          letterConfig={{ tension: 120, friction: 14 }}
-          mode="once"
-          overflow
-        >
-          DEVELOPER
-        </TextEngine>
+      <h1 className="hero-title" aria-label="Full Stack Developer" ref={titleRef}>
+        <animated.span style={titleSpring}>FULL STACK</animated.span>
+        <animated.span style={{ ...titleSpring, delay: 400 }}>DEVELOPER</animated.span>
       </h1>
 
-      {/* Portrait */}
-      <div className="portrait-wrap">
-        <Image
-          src="/hero.png"
-          alt="Portrait of Shahd Khairy Abdallah"
-          width={623}
-          height={414}
-          priority
-        />
-      </div>
+      <animated.div className="portrait-wrap" style={portraitSpring}>
+        <img src="/hero.png" alt="Portrait of Shahd Khairy Abdallah" />
+      </animated.div>
 
-      {/* Gradient overlay */}
-      <div className="hero-overlay" aria-hidden="true" />
+      <animated.p className="hero-role" style={roleSpring}>
+        MERN applications &amp; interactive experiences
+      </animated.p>
 
-      {/* Role */}
-      <p className="hero-role">MERN applications &amp; interactive experiences</p>
-
-      {/* Meta left */}
-      <div className="hero-meta left">
+      <animated.div className="hero-meta left" style={metaSpring}>
         <span>CAIRO — EGYPT</span>
         <span>ARABIC · ENGLISH B2</span>
-      </div>
+      </animated.div>
 
-      {/* Meta right */}
-      <div className="hero-meta right">
+      <animated.div className="hero-meta right" style={metaSpring}>
         <span>REACT · NODE · EXPRESS</span>
         <span>MONGODB · REST APIS</span>
-      </div>
+      </animated.div>
 
-      {/* Scroll cue */}
       <a className="scroll-cue" href="#about">
         SCROLL TO EXPLORE <b>↓</b>
       </a>
