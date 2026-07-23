@@ -65,7 +65,7 @@ existing usage elsewhere in the codebase.
 
 | Section | Frames | Dimensions | Total payload |
 |---|---|---|---|
-| Hero | — | — | — |
+| Hero | 60 | 1920×1080 | 1.36 MB (~23 KB/frame avg) — source: Flow image-to-video, 8s clip |
 | Projects (featured) | — | — | — |
 
 ---
