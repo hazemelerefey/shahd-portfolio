@@ -50,6 +50,7 @@ humans and AI agents (Claude Code, Cursor).
 ### 04 — Workflows
 - [[new-page]] — playbook for implementing a new page/section
 - [[generic-layout-prompt]] — fill-in prompt template for a new page/section
+- [[scroll-motion-upgrade-plan]] — scroll-driven motion upgrade plan (Hero/Projects canvas scrub, GSAP-free)
 - [[ai-agent-guide]] — rules of engagement for AI agents working in this repo
 
 ### Templates
